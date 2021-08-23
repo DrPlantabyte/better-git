@@ -60,7 +60,7 @@ def main():
 		# Checkout push-to branch
 		run('git', 'switch', push_branch_local_name)
 		# Pull push-to branch
-		run('git', 'pull', remote_name, push_branch_local_name)
+		run('git', 'pull', '--ff-only', remote_name, push_branch_local_name)
 		# Merge current branch into push-to branch
 		if squash_merge:
 			run('git', 'merge', '--squash', this_branch, '-m', commit_msg)
@@ -74,7 +74,7 @@ def main():
 				exit(1)
 	else:
 		# Pull push-to branch
-		run('git', 'pull', remote_name, push_branch_local_name)
+		run('git', 'pull', '--ff-only', remote_name, push_branch_local_name)
 	# Try to push
 	run('git', 'push', remote_name, push_branch_local_name)
 	# If push-to branch is different from this branch, ask user if they want to delete the current branch
