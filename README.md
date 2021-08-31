@@ -83,6 +83,7 @@ git commit -m "merged with main_branch"
 ```
 
 #### 5. Send back to the central repository as a commit 
+(TODO: change to rebase)
 ```bash
 git checkout main_branch
 git pull
