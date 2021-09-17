@@ -1,8 +1,10 @@
+import os
+
 import setuptools
 setuptools.setup(
 	name='better_git',
 	version='0.0.1',
-	scripts=['./scripts/bgfork', './scripts/bgcommit', './scripts/bgbranch', './scripts/bgmerge', './scripts/bgpush'],
+	scripts=['./scripts/%s' % f for f in os.listdir('./scripts')],
 	author='Christopher C. Hall',
 	description='Better CLI UI wrapper for Git commands',
 	packages=['lib.better_git'],
